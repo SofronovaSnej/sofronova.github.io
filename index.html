@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Коротколап — помощь животным</title>
     
-    <!-- ===== ПОДКЛЮЧАЕМ КРАСИВЫЕ ШРИФТЫ ===== -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700;900&family=Marck+Script&display=swap" rel="stylesheet">
     
     <style>
-        /* ============================================================
-           МУЛЬТЯШНЫЙ СТИЛЬ + РЕАЛЬНЫЕ ФОТО + КРАСИВЫЙ ШРИФТ
-           ============================================================ */
-
+      
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +33,6 @@
             padding: 0 24px;
         }
 
-        /* ===== ШАПКА ===== */
         header {
             background: #ffdda1;
             padding: 18px 0 16px;
@@ -132,7 +128,6 @@
             box-shadow: 2px 2px 0 #b84333;
         }
 
-        /* ===== НАВИГАЦИЯ ===== */
         nav {
             background: #fff3e0;
             padding: 14px 0;
@@ -173,7 +168,6 @@
             box-shadow: 6px 6px 0 #b84333;
         }
 
-        /* ===== ГЕРОЙ ===== */
         .hero {
             background: #ffe3b0;
             border-radius: 80px 80px 40px 40px;
@@ -266,7 +260,6 @@
             box-shadow: 4px 4px 0 #b84333;
         }
 
-        /* ===== КАРТОЧКИ ===== */
         .section-title {
             font-family: 'Marck Script', cursive;
             font-size: 36px;
@@ -601,7 +594,6 @@
             font-family: 'Comfortaa', sans-serif;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 700px) {
             .hero {
                 padding: 30px 20px;
@@ -657,7 +649,6 @@
 </head>
 <body>
 
-<!-- ===== ШАПКА ===== -->
 <header>
     <div class="container header-flex">
         <div class="logo">
@@ -671,7 +662,6 @@
     </div>
 </header>
 
-<!-- ===== НАВИГАЦИЯ ===== -->
 <nav>
     <div class="container">
         <ul>
@@ -683,7 +673,6 @@
     </div>
 </nav>
 
-<!-- ===== ГЕРОЙ ===== -->
 <main class="container" id="main">
     <section class="hero">
         <div class="hero-text">
@@ -705,7 +694,6 @@
         </div>
     </section>
 
-    <!-- ===== КАРТОЧКИ ===== -->
     <div style="text-align: center;">
         <div class="section-title"><span>🫶</span> Чем мы занимаемся</div>
     </div>
@@ -735,7 +723,6 @@
         </div>
     </div>
 
-    <!-- ===== ИСТОРИИ ===== -->
     <div class="stories" id="stories">
         <div style="text-align: center;">
             <div class="section-title" style="display:inline-block; margin-top:0;"><span>📖</span> Истории спасения</div>
@@ -766,7 +753,6 @@
         </div>
     </div>
 
-    <!-- ===== ФОРМА ПОМОЩИ ===== -->
     <div class="form-box" id="donate">
         <h2>🐾 Помочь фонду</h2>
         <p style="color:#4f3e2e; margin-top:6px; font-size:18px; font-weight:400;">Оставьте заявку, и мы свяжемся с вами для помощи подопечным.</p>
@@ -779,7 +765,6 @@
         <p id="donateMsg" style="margin-top:18px; font-weight:700; font-size:18px; color:#3d2512;"></p>
     </div>
 
-    <!-- ===== КОНТАКТЫ ===== -->
     <div style="background:#fff9e6; border-radius:80px; padding:30px 36px; margin:40px 0; border:6px solid #f09b6c; box-shadow:10px 10px 0 #d48b5e; text-align:center;" id="contacts">
         <h2 style="font-family:'Marck Script', cursive; font-size:32px; color:#3d2512;">📞 Контакты</h2>
         <p style="font-size:18px; margin-top:12px; font-weight:400;">
@@ -793,7 +778,6 @@
     </div>
 </main>
 
-<!-- ===== ФУТЕР ===== -->
 <footer>
     <div class="container">
         <img class="footer-photo" src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Собака" />
@@ -809,14 +793,8 @@
     </div>
 </footer>
 
-<!-- ===== JAVASCRIPT ===== -->
 <script>
-    // ============================================================
-    // 1. ПЕРЕХОД ПО КНОПКАМ (уже реализовано через <a href="#...">)
-    // ============================================================
-    // Все кнопки с классом .donate-btn теперь являются ссылками <a>,
-    // поэтому они перенаправляют к блоку #donate.
-    // Дополнительно можно добавить плавную прокрутку:
+    
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -833,9 +811,6 @@
         });
     });
 
-    // ============================================================
-    // 2. ФОРМА ПОМОЩИ
-    // ============================================================
     const donateBtn = document.getElementById('donateSubmitBtn');
     const donateMsg = document.getElementById('donateMsg');
 
@@ -874,9 +849,6 @@
         setTimeout(() => { donateMsg.style.transform = 'scale(1)'; }, 300);
     });
 
-    // ============================================================
-    // 3. КОНСОЛЬ
-    // ============================================================
     console.log('🐾 Фонд «Коротколап» · Софронова С.Н. загружен! ✨');
 </script>
 </body>
