@@ -11,31 +11,25 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Comfortaa', 'Comic Sans MS', cursive, sans-serif;
             background: #fcf5ea;
             color: #2d2a24;
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 221, 161, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(240, 147, 108, 0.2) 0%, transparent 50%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 221, 161, 0.3) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(240, 147, 108, 0.2) 0%, transparent 50%);
             min-height: 100vh;
         }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
         header {
             background: #ffdda1;
             padding: 18px 0 16px;
             border-bottom: 6px dotted #f09b6c;
             position: relative;
         }
-
         header::after {
             content: "🐾 🐾 🐾";
             position: absolute;
@@ -47,7 +41,6 @@
             font-size: 24px;
             letter-spacing: 12px;
         }
-
         .header-flex {
             display: flex;
             align-items: center;
@@ -55,13 +48,11 @@
             flex-wrap: wrap;
             gap: 16px;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 14px;
         }
-
         .logo img {
             width: 56px;
             height: 56px;
@@ -71,11 +62,9 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-
         .logo img:hover {
             transform: rotate(-8deg) scale(1.05);
         }
-
         .logo h1 {
             font-family: 'Marck Script', cursive;
             font-size: 38px;
@@ -83,7 +72,6 @@
             color: #5e3c1f;
             text-shadow: 3px 3px 0 #f09b6c;
         }
-
         .logo span {
             font-size: 14px;
             color: #7a5f44;
@@ -96,7 +84,6 @@
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-
         .donate-btn {
             background: #f05d4a;
             color: #fff;
@@ -114,17 +101,14 @@
             display: inline-block;
             border: none;
         }
-
         .donate-btn:hover {
             transform: translate(-3px, -3px);
             box-shadow: 10px 10px 0 #b84333;
         }
-
         .donate-btn:active {
             transform: translate(4px, 4px);
             box-shadow: 2px 2px 0 #b84333;
         }
-
         nav {
             background: #fff3e0;
             padding: 14px 0;
@@ -134,7 +118,6 @@
             z-index: 100;
             box-shadow: 0 6px 20px rgba(0,0,0,0.04);
         }
-
         nav ul {
             list-style: none;
             display: flex;
@@ -142,7 +125,6 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
         nav a {
             text-decoration: none;
             color: #4a3426;
@@ -158,14 +140,12 @@
             font-family: 'Comfortaa', sans-serif;
             cursor: pointer;
         }
-
         nav a:hover {
             background: #f09b6c;
             color: #fff;
             transform: scale(1.05) rotate(-1deg);
             box-shadow: 6px 6px 0 #b84333;
         }
-
         .hero {
             background: #ffe3b0;
             border-radius: 80px 80px 40px 40px;
@@ -179,7 +159,6 @@
             box-shadow: 12px 12px 0 #d48b5e;
             position: relative;
         }
-
         .hero::before {
             content: "★ ✦ ★";
             position: absolute;
@@ -190,11 +169,9 @@
             background: #ffe3b0;
             padding: 0 12px;
         }
-
         .hero-text {
             flex: 1 1 280px;
         }
-
         .hero-text h2 {
             font-family: 'Marck Script', cursive;
             font-size: 44px;
@@ -203,7 +180,6 @@
             line-height: 1.2;
             text-shadow: 4px 4px 0 #ffe3b0, 6px 6px 0 #d48b5e;
         }
-
         .hero-text .highlight {
             color: #c0392b;
             background: #fff9e6;
@@ -213,7 +189,6 @@
             transform: rotate(-2deg);
             border: 3px dashed #f05d4a;
         }
-
         .hero-text p {
             font-size: 18px;
             color: #4f3e2e;
@@ -224,12 +199,10 @@
             border: 4px dashed #f09b6c;
             font-weight: 400;
         }
-
         .hero-photo {
             flex: 0 0 200px;
             position: relative;
         }
-
         .hero-photo img {
             width: 200px;
             height: 200px;
@@ -239,12 +212,10 @@
             box-shadow: 10px 10px 0 #d48b5e;
             transition: all 0.3s ease;
         }
-
         .hero-photo img:hover {
             transform: scale(1.05) rotate(3deg);
             box-shadow: 14px 14px 0 #d48b5e;
         }
-
         .hero-photo::after {
             content: "❤️";
             position: absolute;
@@ -257,7 +228,6 @@
             border: 4px solid #f05d4a;
             box-shadow: 4px 4px 0 #b84333;
         }
-
         .section-title {
             font-family: 'Marck Script', cursive;
             font-size: 36px;
@@ -272,18 +242,15 @@
             box-shadow: 8px 8px 0 #d48b5e;
             transform: rotate(-0.5deg);
         }
-
         .section-title span {
             font-size: 38px;
             margin-right: 12px;
         }
-
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 30px;
         }
-
         .card {
             background: #fff9e6;
             border-radius: 60px 60px 40px 40px;
@@ -293,12 +260,10 @@
             transition: all 0.2s ease;
             text-align: center;
         }
-
         .card:hover {
             transform: translate(-4px, -4px) rotate(-0.5deg);
             box-shadow: 12px 12px 0 #d48b5e;
         }
-
         .card img {
             width: 80px;
             height: 80px;
@@ -308,7 +273,6 @@
             box-shadow: 6px 6px 0 #d48b5e;
             margin-bottom: 12px;
         }
-
         .card h3 {
             font-size: 20px;
             font-weight: 900;
@@ -319,7 +283,6 @@
             border-radius: 40px;
             display: inline-block;
         }
-
         .card p {
             color: #5a4a38;
             font-size: 15px;
@@ -329,7 +292,6 @@
             border: 3px dashed #f09b6c;
             font-weight: 400;
         }
-
         .stories {
             background: #ffe3b0;
             border-radius: 80px;
@@ -339,7 +301,6 @@
             box-shadow: 10px 10px 0 #d48b5e;
             position: relative;
         }
-
         .stories::before {
             content: "✧ ✧ ✧";
             position: absolute;
@@ -351,7 +312,6 @@
             color: #f09b6c;
             letter-spacing: 6px;
         }
-
         .story-item {
             display: flex;
             gap: 24px;
@@ -364,16 +324,13 @@
             transition: 0.2s;
             box-shadow: 6px 6px 0 #d48b5e;
         }
-
         .story-item:hover {
             transform: scale(1.01) rotate(0.5deg);
             box-shadow: 8px 8px 0 #d48b5e;
         }
-
         .story-item:last-child {
             margin-bottom: 0;
         }
-
         .story-item img {
             width: 64px;
             height: 64px;
@@ -383,7 +340,6 @@
             box-shadow: 4px 4px 0 #d48b5e;
             flex-shrink: 0;
         }
-
         .story-item h4 {
             font-size: 20px;
             font-weight: 900;
@@ -393,13 +349,11 @@
             gap: 8px;
             flex-wrap: wrap;
         }
-
         .story-item p {
             color: #4f3e2e;
             font-size: 15px;
             font-weight: 400;
         }
-
         .story-badge {
             background: #f05d4a;
             color: #fff;
@@ -411,7 +365,6 @@
             display: inline-block;
             font-weight: 700;
         }
-
         .form-box {
             background: #fff9e6;
             border-radius: 80px;
@@ -421,7 +374,6 @@
             box-shadow: 10px 10px 0 #d48b5e;
             position: relative;
         }
-
         .form-box::after {
             content: "✉️";
             position: absolute;
@@ -431,21 +383,18 @@
             background: #fff9e6;
             padding: 0 12px;
         }
-
         .form-box h2 {
             font-family: 'Marck Script', cursive;
             font-size: 32px;
             font-weight: 400;
             color: #3d2512;
         }
-
         .form-row {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
             margin-top: 20px;
         }
-
         .form-row input {
             flex: 1 1 200px;
             padding: 16px 24px;
@@ -457,14 +406,12 @@
             transition: 0.2s;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .form-row input:focus {
             outline: none;
             border-color: #f05d4a;
             box-shadow: 0 0 0 4px rgba(240, 93, 74, 0.15);
             transform: scale(1.02);
         }
-
         .form-row button {
             background: #f05d4a;
             color: #fff;
@@ -478,17 +425,14 @@
             box-shadow: 6px 6px 0 #b84333;
             font-family: 'Comfortaa', sans-serif;
         }
-
         .form-row button:hover {
             transform: translate(-3px, -3px);
             box-shadow: 10px 10px 0 #b84333;
         }
-
         .form-row button:active {
             transform: translate(4px, 4px);
             box-shadow: 2px 2px 0 #b84333;
         }
-
         .modal {
             display: none;
             position: fixed;
@@ -500,7 +444,6 @@
             background-color: rgba(0,0,0,0.5);
             animation: fadeIn 0.3s;
         }
-
         .modal-content {
             background: #fff9e6;
             margin: 10% auto;
@@ -512,20 +455,17 @@
             position: relative;
             animation: slideDown 0.3s;
         }
-
         .modal-content h2 {
             font-family: 'Marck Script', cursive;
             font-size: 36px;
             color: #3d2512;
             text-align: center;
         }
-
         .modal-content ul {
             list-style: none;
             padding: 0;
             margin: 20px 0;
         }
-
         .modal-content li {
             padding: 12px 0;
             border-bottom: 2px dashed #f09b6c;
@@ -534,11 +474,9 @@
             align-items: center;
             gap: 12px;
         }
-
         .modal-content li:last-child {
             border-bottom: none;
         }
-
         .modal-close {
             background: #f05d4a;
             color: #fff;
@@ -554,22 +492,18 @@
             display: block;
             margin: 10px auto 0;
         }
-
         .modal-close:hover {
             transform: translate(-3px, -3px);
             box-shadow: 10px 10px 0 #b84333;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes slideDown {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         .contacts {
             background: #fff9e6;
             border-radius: 80px;
@@ -579,23 +513,19 @@
             box-shadow: 10px 10px 0 #d48b5e;
             text-align: center;
         }
-
         .contacts h2 {
             font-family: 'Marck Script', cursive;
             font-size: 32px;
             color: #3d2512;
         }
-
         .contacts p {
             font-size: 18px;
             margin-top: 12px;
             font-weight: 400;
         }
-
         .contacts strong {
             color: #3d2512;
         }
-
         footer {
             background: #5e3c1f;
             color: #fff3e0;
@@ -606,7 +536,6 @@
             text-align: center;
             position: relative;
         }
-
         footer::before {
             content: "🐾 🐾 🐾";
             position: absolute;
@@ -618,7 +547,6 @@
             font-size: 24px;
             letter-spacing: 10px;
         }
-
         .footer-photo {
             width: 56px;
             height: 56px;
@@ -627,7 +555,6 @@
             border: 4px solid #f09b6c;
             box-shadow: 0 0 0 3px #fff;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
@@ -635,7 +562,6 @@
             flex-wrap: wrap;
             margin: 16px 0 12px;
         }
-
         footer a {
             color: #ffe3b0;
             text-decoration: none;
@@ -650,14 +576,12 @@
             font-family: 'Comfortaa', sans-serif;
             cursor: pointer;
         }
-
         footer a:hover {
             background: #f09b6c;
             color: #3d2512;
             transform: scale(1.05);
             box-shadow: 6px 6px 0 #b84333;
         }
-
         .copy {
             font-size: 14px;
             opacity: 0.8;
@@ -669,13 +593,11 @@
             border: 2px dashed #f09b6c;
             font-weight: 400;
         }
-
         .copy strong {
             font-weight: 900;
             font-family: 'Marck Script', cursive;
             font-size: 18px;
         }
-
         .stickers {
             display: flex;
             gap: 10px;
@@ -683,7 +605,6 @@
             justify-content: center;
             margin-top: 16px;
         }
-
         .sticker {
             background: #fff9e6;
             padding: 4px 16px;
@@ -696,7 +617,6 @@
             transform: rotate(var(--rot, 0deg));
             font-family: 'Comfortaa', sans-serif;
         }
-
         @media (max-width: 700px) {
             .hero {
                 padding: 30px 20px;
@@ -793,7 +713,7 @@
             <a href="#donate" class="donate-btn" style="background:#3d2512; box-shadow:6px 6px 0 #5e3c1f; margin-top:20px; display:inline-block;">Стать другом</a>
         </div>
         <div class="hero-photo">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='70' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='5'/%3E%3Ccircle cx='72' cy='82' r='10' fill='%232d1f14'/%3E%3Ccircle cx='128' cy='82' r='10' fill='%232d1f14'/%3E%3Cellipse cx='100' cy='115' rx='20' ry='12' fill='%23f05d4a'/%3E%3Cellipse cx='78' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='122' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Crect x='82' cy='30' width='36' height='20' rx='10' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='100' cy='40' r='6' fill='%23fff'/%3E%3Crect x='55' y='50' width='90' height='14' rx='7' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='4' transform='rotate(-8 100 57)'/%3E%3C/svg%3E" alt="Собака" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='70' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='5'/%3E%3Ccircle cx='72' cy='82' r='10' fill='%232d1f14'/%3E%3Ccircle cx='128' cy='82' r='10' fill='%232d1f14'/%3E%3Cellipse cx='100' cy='115' rx='20' ry='12' fill='%23f05d4a'/%3E%3Cellipse cx='78' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='122' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Crect x='82' cy='30' width='36' height='20' rx='10' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='100' cy='40' r='6' fill='%23fff'/%3E%3Crect x='55' y='50' width='90' height='14' rx='7' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='4' transform='rotate(-8 100 57)'/%3E%3C/svg%3E" alt="Счастливая собака" />
         </div>
     </section>
 
@@ -802,12 +722,12 @@
     </div>
     <div class="cards-grid">
         <div class="card">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='38' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='62' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='38' cy='40' r='6' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='40' r='6' fill='%232d1f14'/%3E%3Cpath d='M43 55 Q50 63 57 55' fill='none' stroke='%23f05d4a' stroke-width='5'/%3E%3Crect x='42' y='18' width='16' height='8' rx='4' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Кот" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='38' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='62' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='38' cy='40' r='6' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='40' r='6' fill='%232d1f14'/%3E%3Cpath d='M43 55 Q50 63 57 55' fill='none' stroke='%23f05d4a' stroke-width='5'/%3E%3Crect x='42' y='18' width='16' height='8' rx='4' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Лечение" />
             <h3>🏥 Лечение</h3>
             <p>Оперируем, ставим протезы, лечим болезни — даём второй шанс</p>
         </div>
         <div class="card">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='35' cy='38' r='6' fill='%232d1f14'/%3E%3Ccircle cx='65' cy='38' r='6' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='55' rx='12' ry='7' fill='%23f05d4a'/%3E%3Cellipse cx='38' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Crect x='28' y='62' width='44' height='10' rx='5' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Собака" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='35' cy='38' r='6' fill='%232d1f14'/%3E%3Ccircle cx='65' cy='38' r='6' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='55' rx='12' ry='7' fill='%23f05d4a'/%3E%3Cellipse cx='38' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Crect x='28' y='62' width='44' height='10' rx='5' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Передержка" />
             <h3>🏡 Передержка</h3>
             <p>Волонтёры обеспечивают временный дом с любовью и уходом</p>
         </div>
@@ -817,7 +737,7 @@
             <p>Учим доверять людям и готовим к жизни в семье</p>
         </div>
         <div class="card">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='32' cy='40' r='20' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='68' cy='40' r='20' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='62' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='74' cy='35' r='4' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='68' rx='16' ry='12' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Cpath d='M50 60 L50 76' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E" alt="Семья" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='32' cy='40' r='20' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='68' cy='40' r='20' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='62' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='74' cy='35' r='4' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='68' rx='16' ry='12' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Cpath d='M50 60 L50 76' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E" alt="Поиск семьи" />
             <h3>👨‍👩‍👧 Поиск семьи</h3>
             <p>Находим ответственных хозяев и поддерживаем после</p>
         </div>
