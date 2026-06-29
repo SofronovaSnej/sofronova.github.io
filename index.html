@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Коротколап — помощь животным</title>
-    
-    
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700;900&family=Marck+Script&display=swap" rel="stylesheet">
-    
     <style>
-      
         * {
             margin: 0;
             padding: 0;
@@ -116,6 +112,7 @@
             letter-spacing: 0.5px;
             text-decoration: none;
             display: inline-block;
+            border: none;
         }
 
         .donate-btn:hover {
@@ -159,6 +156,7 @@
             display: inline-block;
             box-shadow: 4px 4px 0 #d48b5e;
             font-family: 'Comfortaa', sans-serif;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -332,7 +330,6 @@
             font-weight: 400;
         }
 
-        /* ===== ИСТОРИИ ===== */
         .stories {
             background: #ffe3b0;
             border-radius: 80px;
@@ -415,7 +412,6 @@
             font-weight: 700;
         }
 
-        /* ===== ФОРМА ===== */
         .form-box {
             background: #fff9e6;
             border-radius: 80px;
@@ -493,7 +489,113 @@
             box-shadow: 2px 2px 0 #b84333;
         }
 
-        /* ===== ФУТЕР ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: #fff9e6;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 60px;
+            max-width: 600px;
+            border: 6px solid #f09b6c;
+            box-shadow: 12px 12px 0 #d48b5e;
+            position: relative;
+            animation: slideDown 0.3s;
+        }
+
+        .modal-content h2 {
+            font-family: 'Marck Script', cursive;
+            font-size: 36px;
+            color: #3d2512;
+            text-align: center;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .modal-content li {
+            padding: 12px 0;
+            border-bottom: 2px dashed #f09b6c;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-content li:last-child {
+            border-bottom: none;
+        }
+
+        .modal-close {
+            background: #f05d4a;
+            color: #fff;
+            border: 4px solid #fff;
+            padding: 12px 36px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 6px 6px 0 #b84333;
+            font-family: 'Comfortaa', sans-serif;
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        .modal-close:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 10px 10px 0 #b84333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .contacts {
+            background: #fff9e6;
+            border-radius: 80px;
+            padding: 30px 36px;
+            margin: 40px 0;
+            border: 6px solid #f09b6c;
+            box-shadow: 10px 10px 0 #d48b5e;
+            text-align: center;
+        }
+
+        .contacts h2 {
+            font-family: 'Marck Script', cursive;
+            font-size: 32px;
+            color: #3d2512;
+        }
+
+        .contacts p {
+            font-size: 18px;
+            margin-top: 12px;
+            font-weight: 400;
+        }
+
+        .contacts strong {
+            color: #3d2512;
+        }
+
         footer {
             background: #5e3c1f;
             color: #fff3e0;
@@ -546,6 +648,7 @@
             transition: 0.2s;
             box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
             font-family: 'Comfortaa', sans-serif;
+            cursor: pointer;
         }
 
         footer a:hover {
@@ -644,6 +747,10 @@
             .stories::before {
                 display: none;
             }
+            .modal-content {
+                margin: 20% 16px;
+                padding: 24px;
+            }
         }
     </style>
 </head>
@@ -652,7 +759,7 @@
 <header>
     <div class="container header-flex">
         <div class="logo">
-            <img src="https://krot.info/uploads/posts/2022-02/1645361582_6-krot-info-p-sobaka-v-zashchitnoi-maske-zhivotnie-9.jpg" alt="Собака" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='35' cy='42' r='7' fill='%232d1f14'/%3E%3Ccircle cx='65' cy='42' r='7' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='60' rx='14' ry='8' fill='%23f05d4a'/%3E%3Cellipse cx='40' cy='30' rx='8' ry='12' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='60' cy='30' rx='8' ry='12' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Логотип" />
             <div>
                 <h1>Коротколап</h1>
                 <span>✨ благотворительный фонд</span>
@@ -667,7 +774,7 @@
         <ul>
             <li><a href="#main">🏠 Главная</a></li>
             <li><a href="#stories">📖 Истории</a></li>
-            <li><a href="#help">🤝 Как помочь</a></li>
+            <li><a href="#" onclick="openModal()">🤝 Как помочь</a></li>
             <li><a href="#contacts">📞 Контакты</a></li>
         </ul>
     </div>
@@ -678,19 +785,15 @@
         <div class="hero-text">
             <h2>Даже <span class="highlight">короткие лапки</span><br />заслуживают счастья 🐾</h2>
             <p>Мы помогаем бездомным кошкам и собакам с ограниченными возможностями найти любящий дом и заботу.</p>
-            
             <div class="stickers">
                 <span class="sticker" style="--rot:-2deg;">⭐ 250+ спасённых</span>
                 <span class="sticker" style="--rot:2deg;">🏆 5 лет заботы</span>
                 <span class="sticker" style="--rot:-1deg;">🤝 100+ волонтёров</span>
             </div>
-            
-            <a href="#donate" class="donate-btn" style="background:#3d2512; box-shadow:6px 6px 0 #5e3c1f; margin-top:20px; display:inline-block;">
-                Стать другом
-            </a>
+            <a href="#donate" class="donate-btn" style="background:#3d2512; box-shadow:6px 6px 0 #5e3c1f; margin-top:20px; display:inline-block;">Стать другом</a>
         </div>
         <div class="hero-photo">
-            <img src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Собака с повязкой" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='70' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='5'/%3E%3Ccircle cx='72' cy='82' r='10' fill='%232d1f14'/%3E%3Ccircle cx='128' cy='82' r='10' fill='%232d1f14'/%3E%3Cellipse cx='100' cy='115' rx='20' ry='12' fill='%23f05d4a'/%3E%3Cellipse cx='78' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='122' cy='60' rx='12' ry='18' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Crect x='82' cy='30' width='36' height='20' rx='10' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='100' cy='40' r='6' fill='%23fff'/%3E%3Crect x='55' y='50' width='90' height='14' rx='7' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='4' transform='rotate(-8 100 57)'/%3E%3C/svg%3E" alt="Собака" />
         </div>
     </section>
 
@@ -699,25 +802,22 @@
     </div>
     <div class="cards-grid">
         <div class="card">
-            <img src="https://krot.info/uploads/posts/2022-02/1645361582_6-krot-info-p-sobaka-v-zashchitnoi-maske-zhivotnie-9.jpg" alt="Кот в клинике" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='38' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='62' cy='33' rx='8' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='38' cy='40' r='6' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='40' r='6' fill='%232d1f14'/%3E%3Cpath d='M43 55 Q50 63 57 55' fill='none' stroke='%23f05d4a' stroke-width='5'/%3E%3Crect x='42' y='18' width='16' height='8' rx='4' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Кот" />
             <h3>🏥 Лечение</h3>
             <p>Оперируем, ставим протезы, лечим болезни — даём второй шанс</p>
         </div>
-
         <div class="card">
-            <img src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Собака в доме" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='32' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='35' cy='38' r='6' fill='%232d1f14'/%3E%3Ccircle cx='65' cy='38' r='6' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='55' rx='12' ry='7' fill='%23f05d4a'/%3E%3Cellipse cx='38' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Crect x='28' y='62' width='44' height='10' rx='5' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Собака" />
             <h3>🏡 Передержка</h3>
             <p>Волонтёры обеспечивают временный дом с любовью и уходом</p>
         </div>
-
         <div class="card">
-            <img src="https://krot.info/uploads/posts/2022-02/1645361582_6-krot-info-p-sobaka-v-zashchitnoi-maske-zhivotnie-9.jpg" alt="Собака с человеком" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='38' cy='45' r='28' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='28' cy='38' r='5' fill='%232d1f14'/%3E%3Ccircle cx='48' cy='38' r='5' fill='%232d1f14'/%3E%3Cellipse cx='38' cy='53' rx='9' ry='6' fill='%23f05d4a'/%3E%3Cellipse cx='28' cy='28' rx='6' ry='9' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='48' cy='28' rx='6' ry='9' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Ccircle cx='72' cy='45' r='20' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='66' cy='40' r='4' fill='%232d1f14'/%3E%3Ccircle cx='78' cy='40' r='4' fill='%232d1f14'/%3E%3Cpath d='M69 50 Q72 55 75 50' fill='none' stroke='%23f05d4a' stroke-width='4'/%3E%3C/svg%3E" alt="Адаптация" />
             <h3>🤗 Адаптация</h3>
             <p>Учим доверять людям и готовим к жизни в семье</p>
         </div>
-
         <div class="card">
-            <img src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Счастливая семья" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='32' cy='40' r='20' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='68' cy='40' r='20' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='62' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='74' cy='35' r='4' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='68' rx='16' ry='12' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Cpath d='M50 60 L50 76' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E" alt="Семья" />
             <h3>👨‍👩‍👧 Поиск семьи</h3>
             <p>Находим ответственных хозяев и поддерживаем после</p>
         </div>
@@ -727,25 +827,22 @@
         <div style="text-align: center;">
             <div class="section-title" style="display:inline-block; margin-top:0;"><span>📖</span> Истории спасения</div>
         </div>
-
         <div class="story-item">
-            <img src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Трёхлапый кот" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='30' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='38' cy='33' rx='7' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='33' rx='7' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='3'/%3E%3Ccircle cx='38' cy='40' r='5' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='40' r='5' fill='%232d1f14'/%3E%3Cpath d='M43 53 Q50 60 57 53' fill='none' stroke='%23f05d4a' stroke-width='5'/%3E%3Crect x='24' y='62' width='14' height='8' rx='4' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Барсик" />
             <div>
                 <h4>🐈 Барсик <span class="story-badge">трёхлапый</span></h4>
                 <p>Найден с переломом после ДТП. Мы сделали операцию, поставили протез. Теперь Барсик бегает быстрее всех в приюте и ждёт своего человека.</p>
             </div>
         </div>
-
         <div class="story-item">
-            <img src="https://krot.info/uploads/posts/2022-02/1645361582_6-krot-info-p-sobaka-v-zashchitnoi-maske-zhivotnie-9.jpg" alt="Собака с парезом" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='30' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='35' cy='38' r='6' fill='%232d1f14'/%3E%3Ccircle cx='65' cy='38' r='6' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='55' rx='12' ry='7' fill='%23f05d4a'/%3E%3Cellipse cx='38' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='25' rx='7' ry='11' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Crect x='30' y='50' width='40' height='8' rx='4' fill='%23a9dfbf' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Джесси" />
             <div>
                 <h4>🐕 Джесси <span class="story-badge">парез</span></h4>
                 <p>Не могла ходить после тяжёлых родов. Мы подарили ей курс реабилитации, массажи и плавание. Сейчас Джесси гуляет по 2 часа в день!</p>
             </div>
         </div>
-
         <div class="story-item">
-            <img src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Слепая кошка" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='30' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Cellipse cx='38' cy='33' rx='7' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='62' cy='33' rx='7' ry='11' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='3'/%3E%3Ccircle cx='38' cy='40' r='5' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='40' r='5' fill='%232d1f14'/%3E%3Cpath d='M43 53 Q50 60 57 53' fill='none' stroke='%23f05d4a' stroke-width='5'/%3E%3Crect x='32' y='36' width='36' height='10' rx='5' fill='%23f9e79f' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Мурка" />
             <div>
                 <h4>🐱 Мурка <span class="story-badge">слепая</span></h4>
                 <p>Её хотели усыпить, но мы забрали. Мурка освоилась в доме за 3 дня, прекрасно ориентируется и обожает обниматься.</p>
@@ -765,26 +862,38 @@
         <p id="donateMsg" style="margin-top:18px; font-weight:700; font-size:18px; color:#3d2512;"></p>
     </div>
 
-    <div style="background:#fff9e6; border-radius:80px; padding:30px 36px; margin:40px 0; border:6px solid #f09b6c; box-shadow:10px 10px 0 #d48b5e; text-align:center;" id="contacts">
-        <h2 style="font-family:'Marck Script', cursive; font-size:32px; color:#3d2512;">📞 Контакты</h2>
+    <div class="contacts" id="contacts">
+        <h2>📞 Контакты</h2>
         <p style="font-size:18px; margin-top:12px; font-weight:400;">
             📧 <strong>korotkolap@fond.ru</strong><br />
             📱 <strong>+7 (999) 123-45-67</strong><br />
             🏠 <strong>г. Владивосток, ул. Океанская, 10</strong>
         </p>
-        <p style="margin-top:12px; font-size:14px; color:#7a5f44;">
-            ❤️ Работаем ежедневно с 10:00 до 20:00
-        </p>
+        <p style="margin-top:12px; font-size:14px; color:#7a5f44;">❤️ Работаем ежедневно с 10:00 до 20:00</p>
     </div>
 </main>
 
+<div class="modal" id="helpModal">
+    <div class="modal-content">
+        <h2>🤝 Как помочь фонду</h2>
+        <ul>
+            <li>💰 <strong>Финансовая помощь</strong> — любая сумма идёт на лечение и уход за животными</li>
+            <li>🏠 <strong>Передержка</strong> — станьте временным домом для подопечного</li>
+            <li>🐾 <strong>Волонтёрство</strong> — помогайте с выгулом, уборкой и социализацией</li>
+            <li>📦 <strong>Передача вещей</strong> — корм, лежанки, игрушки, лекарства</li>
+            <li>📢 <strong>Распространение информации</strong> — расскажите о нас друзьям</li>
+        </ul>
+        <button class="modal-close" onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+
 <footer>
     <div class="container">
-        <img class="footer-photo" src="https://i.pinimg.com/736x/59/aa/b7/59aab73ec8a633c418b86f54bac59885.jpg" alt="Собака" />
+        <img class="footer-photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='45' r='28' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='38' cy='38' r='5' fill='%232d1f14'/%3E%3Ccircle cx='62' cy='38' r='5' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='52' rx='10' ry='6' fill='%23f05d4a'/%3E%3Cellipse cx='40' cy='28' rx='6' ry='9' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3Cellipse cx='60' cy='28' rx='6' ry='9' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='3'/%3E%3C/svg%3E" alt="Собака" />
         <div class="footer-links">
             <a href="#main">Главная</a>
             <a href="#stories">Истории</a>
-            <a href="#donate">Помочь</a>
+            <a href="#" onclick="openModal()">Как помочь</a>
             <a href="#contacts">Контакты</a>
         </div>
         <div class="copy">
@@ -794,7 +903,21 @@
 </footer>
 
 <script>
-    
+    function openModal() {
+        document.getElementById('helpModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('helpModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('helpModal')) {
+            closeModal();
+        }
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
