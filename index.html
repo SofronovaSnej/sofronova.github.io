@@ -206,6 +206,11 @@
             padding: 6px;
             border: 4px solid #f05d4a;
             box-shadow: 4px 4px 0 #b84333;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
         .section-title {
             font-family: 'Marck Script', cursive;
@@ -236,8 +241,19 @@
             padding: 28px 22px 26px;
             border: 5px solid #f09b6c;
             box-shadow: 8px 8px 0 #d48b5e;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s ease forwards;
+        }
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes cardAppear {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         .card:hover {
             transform: translate(-4px, -4px) rotate(-0.5deg);
@@ -251,6 +267,10 @@
             border: 4px solid #fff;
             box-shadow: 6px 6px 0 #d48b5e;
             margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+        .card img:hover {
+            transform: scale(1.1) rotate(5deg);
         }
         .card h3 {
             font-size: 20px;
@@ -300,7 +320,7 @@
             background: #fff9e6;
             border-radius: 60px;
             border: 4px solid #f09b6c;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             box-shadow: 6px 6px 0 #d48b5e;
         }
         .story-item:hover {
@@ -318,6 +338,10 @@
             border: 4px solid #fff;
             box-shadow: 4px 4px 0 #d48b5e;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .story-item img:hover {
+            transform: scale(1.1) rotate(10deg);
         }
         .story-item h4 {
             font-size: 20px;
@@ -382,7 +406,7 @@
             font-size: 16px;
             background: #fff;
             font-family: 'Comfortaa', sans-serif;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
         }
         .form-row input:focus {
@@ -400,7 +424,7 @@
             font-weight: 800;
             font-size: 18px;
             cursor: pointer;
-            transition: 0.15s;
+            transition: all 0.15s ease;
             box-shadow: 6px 6px 0 #b84333;
             font-family: 'Comfortaa', sans-serif;
         }
@@ -421,7 +445,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s;
+            animation: fadeIn 0.3s ease;
             align-items: center;
             justify-content: center;
         }
@@ -435,7 +459,7 @@
             border: 6px solid #f09b6c;
             box-shadow: 12px 12px 0 #d48b5e;
             position: relative;
-            animation: slideDown 0.3s;
+            animation: slideDown 0.3s ease;
             max-height: 90vh;
             overflow-y: auto;
         }
@@ -456,7 +480,7 @@
             border: none;
             font-family: 'Comfortaa', sans-serif;
             font-weight: 700;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             padding: 0 10px;
             line-height: 1;
         }
@@ -489,7 +513,7 @@
             font-weight: 800;
             font-size: 18px;
             cursor: pointer;
-            transition: 0.15s;
+            transition: all 0.15s ease;
             box-shadow: 6px 6px 0 #b84333;
             font-family: 'Comfortaa', sans-serif;
             display: block;
@@ -557,6 +581,10 @@
             object-fit: cover;
             border: 4px solid #f09b6c;
             box-shadow: 0 0 0 3px #fff;
+            transition: transform 0.3s ease;
+        }
+        .footer-photo:hover {
+            transform: scale(1.1) rotate(-5deg);
         }
         .footer-links {
             display: flex;
@@ -574,7 +602,7 @@
             background: rgba(255,255,255,0.06);
             border-radius: 60px;
             border: 3px solid #f09b6c;
-            transition: 0.2s;
+            transition: all 0.2s ease;
             box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
             font-family: 'Comfortaa', sans-serif;
             cursor: pointer;
@@ -619,6 +647,14 @@
             display: inline-block;
             transform: rotate(var(--rot, 0deg));
             font-family: 'Comfortaa', sans-serif;
+            animation: stickerJump 2s ease-in-out infinite;
+        }
+        .sticker:nth-child(1) { animation-delay: 0s; }
+        .sticker:nth-child(2) { animation-delay: 0.3s; }
+        .sticker:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes stickerJump {
+            0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+            50% { transform: translateY(-6px) rotate(calc(var(--rot, 0deg) + 2deg)); }
         }
         @media (max-width: 700px) {
             .hero {
@@ -679,6 +715,9 @@
                 font-size: 28px;
                 top: 12px;
                 right: 16px;
+            }
+            .sticker {
+                animation: none;
             }
         }
     </style>
@@ -746,163 +785,4 @@
             <p>Учим доверять людям и готовим к жизни в семье</p>
         </div>
         <div class="card">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='32' cy='40' r='20' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='68' cy='40' r='20' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='62' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='74' cy='35' r='4' fill='%232d1f14'/%3E%3Cellipse cx='50' cy='68' rx='16' ry='12' fill='%23f05d4a' stroke='%235e3c1f' stroke-width='4'/%3E%3Cpath d='M50 60 L50 76' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E" alt="Поиск семьи" />
-            <h3>👨‍👩‍👧 Поиск семьи</h3>
-            <p>Находим ответственных хозяев и поддерживаем после</p>
-        </div>
-    </div>
-
-    <div class="stories" id="stories">
-        <div style="text-align: center;">
-            <div class="section-title" style="display:inline-block; margin-top:0;"><span>📖</span> Истории спасения</div>
-        </div>
-        <div class="story-item">
-            <img src="https://avatars.mds.yandex.net/i?id=45e5099ea571384bda1e4c3c43e4481e0689c064-9181330-images-thumbs&n=13" alt="Барсик" />
-            <div>
-                <h4>🐈 Барсик <span class="story-badge">трёхлапый</span></h4>
-                <p>Найден с переломом после ДТП. Мы сделали операцию, поставили протез. Теперь Барсик бегает быстрее всех в приюте и ждёт своего человека.</p>
-            </div>
-        </div>
-        <div class="story-item">
-            <img src="https://img1.liveinternet.ru/images/attach/d/3/156/927/156927457_5774028_shatkaya.jpg" alt="Джесси" />
-            <div>
-                <h4>🐕 Джесси <span class="story-badge">парез</span></h4>
-                <p>Не могла ходить после тяжёлых родов. Мы подарили ей курс реабилитации, массажи и плавание. Сейчас Джесси гуляет по 2 часа в день!</p>
-            </div>
-        </div>
-        <div class="story-item">
-            <img src="https://i.pinimg.com/736x/4a/0e/93/4a0e935974942f55e5818060bb010a42.jpg" alt="Мурка" />
-            <div>
-                <h4>🐱 Мурка <span class="story-badge">слепая</span></h4>
-                <p>Её хотели усыпить, но мы забрали. Мурка освоилась в доме за 3 дня, прекрасно ориентируется и обожает обниматься.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-box" id="donate">
-        <h2>🐾 Помочь фонду</h2>
-        <p style="color:#4f3e2e; margin-top:6px; font-size:18px; font-weight:400;">Оставьте заявку, и мы свяжемся с вами для помощи подопечным.</p>
-        <div class="form-row">
-            <input type="text" placeholder="Ваше имя" id="donateName" />
-            <input type="email" placeholder="E-mail" id="donateEmail" />
-            <input type="text" placeholder="Сумма помощи (₽)" id="donateAmount" />
-            <button id="donateSubmitBtn">Отправить</button>
-        </div>
-        <p id="donateMsg" style="margin-top:18px; font-weight:700; font-size:18px; color:#3d2512;"></p>
-    </div>
-
-    <div class="contacts" id="contacts">
-        <h2>📞 Контакты</h2>
-        <p style="font-size:18px; margin-top:12px; font-weight:400;">
-            📧 <strong>korotkolap@fond.ru</strong><br />
-            📱 <strong>+7 (999) 123-45-67</strong><br />
-            🏠 <strong>г. Владивосток, ул. Океанская, 10</strong>
-        </p>
-        <p style="margin-top:12px; font-size:14px; color:#7a5f44;">❤️ Работаем ежедневно с 10:00 до 20:00</p>
-    </div>
-</main>
-
-<div class="modal" id="helpModal">
-    <div class="modal-content">
-        <button class="modal-close-btn" onclick="closeModal()">✕</button>
-        <h2>🤝 Как помочь фонду</h2>
-        <ul>
-            <li>💰 <strong>Финансовая помощь</strong> — любая сумма идёт на лечение и уход за животными</li>
-            <li>🏠 <strong>Передержка</strong> — станьте временным домом для подопечного</li>
-            <li>🐾 <strong>Волонтёрство</strong> — помогайте с выгулом, уборкой и социализацией</li>
-            <li>📦 <strong>Передача вещей</strong> — корм, лежанки, игрушки, лекарства</li>
-            <li>📢 <strong>Распространение информации</strong> — расскажите о нас друзьям</li>
-        </ul>
-        <button class="modal-close-bottom" onclick="closeModal()">Закрыть</button>
-    </div>
-</div>
-
-<footer>
-    <div class="container">
-        <img class="footer-photo" src="https://avatars.mds.yandex.net/i?id=4deb5034bf60259f43ec9e670ddd71d230e31715-4273750-images-thumbs&n=13" alt="Собака" />
-        <div class="footer-links">
-            <a href="#main">Главная</a>
-            <a href="#stories">Истории</a>
-            <a href="#" onclick="openModal()">Как помочь</a>
-            <a href="#contacts">Контакты</a>
-        </div>
-        <div class="copy">
-            © 2026 Благотворительный фонд «Коротколап» · ДВФУ · <strong>Софронова С.Н.</strong> ✨
-        </div>
-    </div>
-</footer>
-
-<script>
-    function openModal() {
-        document.getElementById('helpModal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        document.getElementById('helpModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('helpModal')) {
-            closeModal();
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    const donateBtn = document.getElementById('donateSubmitBtn');
-    const donateMsg = document.getElementById('donateMsg');
-
-    donateBtn.addEventListener('click', function() {
-        const name = document.getElementById('donateName').value.trim();
-        const email = document.getElementById('donateEmail').value.trim();
-        const amount = document.getElementById('donateAmount').value.trim();
-
-        if (!name || !email || !amount) {
-            donateMsg.style.color = '#c0392b';
-            donateMsg.textContent = '⚠️ Пожалуйста, заполните все поля!';
-            return;
-        }
-
-        if (!email.includes('@') || !email.includes('.')) {
-            donateMsg.style.color = '#c0392b';
-            donateMsg.textContent = '⚠️ Введите корректный e-mail!';
-            return;
-        }
-
-        if (isNaN(amount) || Number(amount) <= 0) {
-            donateMsg.style.color = '#c0392b';
-            donateMsg.textContent = '⚠️ Введите корректную сумму (число)';
-            return;
-        }
-
-        donateMsg.style.color = '#1e7e34';
-        donateMsg.textContent = `✅ Спасибо, ${name}! Заявка на ${amount} ₽ принята. Мы свяжемся с вами на ${email} 🐾`;
-
-        document.getElementById('donateName').value = '';
-        document.getElementById('donateEmail').value = '';
-        document.getElementById('donateAmount').value = '';
-
-        donateMsg.style.transition = 'all 0.3s';
-        donateMsg.style.transform = 'scale(1.05)';
-        setTimeout(() => { donateMsg.style.transform = 'scale(1)'; }, 300);
-    });
-
-    console.log('🐾 Фонд «Коротколап» · Софронова С.Н. загружен! ✨');
-</script>
-</body>
-</html>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='32' cy='40' r='20' fill='%23f5cba7' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%232d1f14'/%3E%3Ccircle cx='68' cy='40' r='20' fill='%23d5dbdb' stroke='%235e3c1f' stroke-width='4'/%3E%3Ccircle cx='62' cy='35' r='4' fill='%232d1f14'/%3E%
